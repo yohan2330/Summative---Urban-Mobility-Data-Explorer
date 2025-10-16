@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NYC Taxi Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🚕 NYC Taxi Dashboard</h1>
+  <section id="controls">
+    <label>Start <input type="datetime-local" id="start"></label>
+    <label>End <input type="datetime-local" id="end"></label>
+    <label>Min Speed <input type="number" id="min_speed" step="0.1"></label>
+    <label>Max Speed <input type="number" id="max_speed" step="0.1"></label>
+    <label>Vendor <select id="vendor"><option value="">All</option></select></label>
+    <button onclick="loadTrips()">Apply Filters</button>
+  </section>
+
+  <div id="summary"></div>
+  <canvas id="chart" width="640" height="280"></canvas>
+  <hr>
+  <h3>Sample Trips</h3>
+  <div id="trips"></div>
+
+  <button onclick="loadInsights()">Refresh Insights</button>
+  <div id="insights"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
