@@ -10,7 +10,7 @@ This project demonstrates a full-cycle data product on the NYC Taxi Trip dataset
 data/train.zip  (or data/train.csv)
 ```
 
-2) Create a virtual environment and install deps:
+2) Create a virtual environment and install deps (recommended Python 3.10–3.11):
 
 ```
 python -m venv .venv
@@ -35,6 +35,12 @@ python backend/app.py
 
 Just open `frontend/index.html` in your browser. It calls the API at `http://127.0.0.1:5000`.
 
+Optional: generate the PDF report (requires `pandoc` installed):
+
+```
+scripts/generate_pdf.sh
+```
+
 ## Architecture
 
 - Backend: Flask API + SQLite. Data pipeline with Pandas for cleaning/feature engineering. Indices for key filters.
@@ -53,3 +59,7 @@ Implemented in `backend/custom_algorithm.py`:
 - Database lives at `data/nyc_taxi.db`
 - `logs/exclusions.csv` summarizes dropped records and reasons
 - Add your video walkthrough link here: <VIDEO_LINK_HERE>
+
+Note on environment: If using very new Python versions (e.g., 3.13), some
+binary wheels may be unavailable. Prefer Python 3.10–3.11 to avoid building
+`numpy`/`pandas` from source.
